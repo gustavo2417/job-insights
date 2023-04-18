@@ -1,10 +1,15 @@
 from typing import List, Dict
-# from jobs import read
+from src.insights.jobs import read
 
 
 def get_unique_industries(path: str) -> List[str]:
+    all_industries = read(path)
+    industries = []
 
-    raise NotImplementedError
+    for indus in all_industries:
+        if indus["industry"] not in industries and len(indus["industry"]) > 1:
+            industries.append(indus["industry"])
+    return industries
 
 
 def filter_by_industry(jobs: List[Dict], industry: str) -> List[Dict]:
