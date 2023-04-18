@@ -19,4 +19,3 @@ def filter_by_industry(jobs: List[Dict], industry: str) -> List[Dict]:
             all_jobs_industry.append(job)
 
     return all_jobs_industry
-
